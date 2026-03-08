@@ -33,6 +33,7 @@
           <li class="nav-item"><a href="/activity/">活動内容</a></li>
           <li class="nav-item"><a href="/news/">お知らせ</a></li>
           <li class="nav-item"><a href="/contact/">お問い合わせ</a></li>
+        <li class="nav-item nav-item--sub"><a href="/support/membership/">入会フォーム</a></li>
         <li class="nav-item nav-item--highlight"><a href="/news/lecture-2026/">特別講演会</a></li>
         </ul>
     </div>
@@ -160,8 +161,20 @@
           <!-- CTA -->
           <div id="apply" style="margin-top: 48px; padding: 40px; background: var(--color-primary); border-radius: var(--radius-lg); text-align: center; color: white;">
             <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 16px;">入会のお申し込み</h2>
-            <p style="margin-bottom: 24px; opacity: 0.9;">入会をご希望の方は、お問い合わせフォームよりお申し込みください。</p>
-            <a href="/contact/" class="btn btn--white">入会申込フォームへ</a>
+            <p style="margin-bottom: 24px; opacity: 0.9;">下記ボタンより入会申込フォームへお進みください。</p>
+            <button onclick="document.getElementById('modal-preparing').style.display='flex'" class="btn btn--white" style="cursor:pointer;border:none;">入会申込フォームへ</button>
+          </div>
+
+          <!-- 準備中モーダル -->
+          <div id="modal-preparing" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.5);align-items:center;justify-content:center;" onclick="if(event.target===this)this.style.display='none'">
+            <div style="background:white;border-radius:var(--radius-lg);padding:48px 40px;max-width:420px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.3);">
+              <div style="width:64px;height:64px;background:var(--color-bg-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              </div>
+              <h3 style="font-size:1.25rem;font-weight:700;color:var(--color-text);margin-bottom:12px;">準備中です</h3>
+              <p style="font-size:0.9375rem;color:var(--color-text-sub);line-height:1.8;margin-bottom:24px;">入会申込フォームは現在準備中です。<br>もう少々お待ちください。</p>
+              <button onclick="document.getElementById('modal-preparing').style.display='none'" class="btn btn--primary" style="cursor:pointer;border:none;">閉じる</button>
+            </div>
           </div>
         </div>
       </div>

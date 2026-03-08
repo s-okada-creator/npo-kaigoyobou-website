@@ -593,6 +593,27 @@ ul, ol {
 }
 
 /* Highlight Nav Item (特別講演会等) */
+.nav-item--sub {
+  margin-left: 8px;
+}
+
+.nav-item--sub > a {
+  background: rgba(255,255,255,0.9) !important;
+  color: var(--color-primary) !important;
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.9);
+  border-radius: 6px;
+  margin: 5px 0;
+  padding: 9px 20px !important;
+  font-size: 0.8125rem;
+  letter-spacing: 0.03em;
+}
+
+.nav-item--sub > a:hover {
+  background: white !important;
+  color: var(--color-primary) !important;
+}
+
 .nav-item--highlight {
   margin-left: 8px;
 }
