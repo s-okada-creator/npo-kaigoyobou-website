@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="日本介護予防推進協会へのお問い合わせフォーム。活動内容・入会・寄付・ボランティア等に関するお問い合わせはこちら">
+  <meta property="og:title" content="お問い合わせ - 日本介護予防推進協会">
+  <meta property="og:description" content="日本介護予防推進協会へのお問い合わせフォーム">
+  <meta property="og:type" content="website">
+  <title>お問い合わせ - 日本介護予防推進協会</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="../images/favicon.ico">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+  <header class="main-header">
+    <div class="container">
+      <a href="/" class="header-logo">
+        <div class="header-logo__name">日本介護予防推進協会</div>
+      </a>
+      <button class="hamburger" aria-label="メニュー" aria-expanded="false" aria-controls="global-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+  <nav class="global-nav" id="global-nav" aria-label="メインナビゲーション">
+    <div class="container">
+      <ul class="nav-list">
+<li class="nav-item"><a href="/">ホーム</a></li>
+          <li class="nav-item"><a href="/about/">団体について</a></li>
+          <li class="nav-item"><a href="/activity/">活動内容</a></li>
+          <li class="nav-item"><a href="/news/">お知らせ</a></li>
+          <li class="nav-item active"><a href="/contact/" aria-current="page">お問い合わせ</a></li>
+        <li class="nav-item nav-item--highlight"><a href="/news/lecture-2026/">特別講演会</a></li>
+        </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="page-header__bg"></div>
+    <div class="page-header__bg-image" style="background-image: url('../images/page-header-contact.jpg'); background-position: center 25%;"></div>
+    <div class="container">
+      <div class="page-header__content">
+        <div class="page-header__en" lang="en">Contact Us</div>
+        <h1 class="page-header__title">お問い合わせ</h1>
+      </div>
+    </div>
+  </div>
+
+
+  <main id="main-content">
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <ol class="breadcrumb__list" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">ホーム</span></a>
+          <meta itemprop="position" content="1">
+        </li>
+        <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <span itemprop="name">お問い合わせ</span>
+          <meta itemprop="position" content="2">
+        </li>
+      </ol>
+    </nav>
+    <!-- Contact Form -->
+    <section class="section">
+      <div class="container">
+        <div class="container--narrow">
+          <p class="form-intro">
+            お問い合わせは以下のフォームよりお願いいたします。<br>
+            営業目的でのご利用はご遠慮ください。
+          </p>
+
+          <!-- NOTE: action先はサーバーサイド実装に合わせて変更してください -->
+          <form action="#" method="post" class="form-container" novalidate>
+            <div class="form-group">
+              <label for="contact-name" class="form-label">
+                お名前 <span class="required" aria-hidden="true">必須</span>
+              </label>
+              <input type="text" id="contact-name" name="name" class="form-input" required autocomplete="name">
+            </div>
+
+            <div class="form-group">
+              <label for="contact-email" class="form-label">
+                メールアドレス <span class="required" aria-hidden="true">必須</span>
+              </label>
+              <input type="email" id="contact-email" name="email" class="form-input" required autocomplete="email">
+            </div>
+
+            <div class="form-group">
+              <label for="contact-tel" class="form-label">
+                電話番号 <span class="optional">任意</span>
+              </label>
+              <input type="tel" id="contact-tel" name="tel" class="form-input" autocomplete="tel">
+            </div>
+
+            <div class="form-group">
+              <label for="contact-category" class="form-label">
+                お問い合わせ種別 <span class="required" aria-hidden="true">必須</span>
+              </label>
+              <select id="contact-category" name="category" class="form-select" required>
+                <option value="">選択してください</option>
+                <option value="activity">活動内容について</option>
+                <option value="membership">入会について</option>
+                <option value="donation">寄付について</option>
+                <option value="volunteer">ボランティアについて</option>
+                <option value="media">取材・メディア関連</option>
+                <option value="other">その他</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message" class="form-label">
+                お問い合わせ内容 <span class="required" aria-hidden="true">必須</span>
+              </label>
+              <textarea id="contact-message" name="message" class="form-textarea" required></textarea>
+            </div>
+
+            <div class="form-submit-group">
+              <button type="submit" class="btn btn--primary btn--lg">送信する</button>
+            </div>
+
+            <p class="form-note">
+              ※送信後、自動返信メールをお送りいたします。<br>
+              ※お問い合わせへの回答には数日かかる場合がございます。
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <div class="footer__logo-name">日本介護予防推進協会</div>
+          <p class="footer__mission">介護予防の啓発・専門家育成・相談支援を通じて、高齢者が安心して暮らせる社会を目指します。</p>
+        </div>
+        <nav class="footer__nav">
+          <div class="footer__nav-group">
+            <h4>団体情報</h4>
+            <ul>
+              <li><a href="/about/">団体について</a></li>
+              <li><a href="/about/organization/">組織概要</a></li>
+              <li><a href="/about/members/">役員・スタッフ</a></li>
+              <li><a href="/about/access/">アクセス</a></li>
+            </ul>
+          </div>
+          <div class="footer__nav-group">
+            <h4>活動</h4>
+            <ul>
+              <li><a href="/activity/">活動内容</a></li>
+              <li><a href="/news/">お知らせ</a></li>
+            </ul>
+          </div>
+          <div class="footer__nav-group">
+            <h4>お問い合わせ</h4>
+            <ul>
+              <li><a href="/contact/">お問い合わせ</a></li>
+              <li><a href="/privacy/">プライバシーポリシー</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <small>&copy; <span id="current-year">2026</span> 特定非営利活動法人 日本介護予防推進協会</small>
+        <div class="footer__bottom-links">
+          <a href="/privacy/">プライバシーポリシー</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/common.js"></script>
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    generateBreadcrumbSchema([
+      { name: "ホーム", url: window.location.origin + "/" },
+      { name: "お問い合わせ", url: window.location.href }
+    ]);
+  </script>
+</body>
+</html>

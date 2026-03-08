@@ -1,0 +1,18 @@
+# Source/temp files
+NPO/
+素材/
+*.jpeg
+スクリーンショット*
+お問い合わせ画像.png
+活動内容.png
+医療種交流写真.png
+交流写真.png
+地域への予防医療教育・啓発.png
+AI画像生成リスト_v2.md
+.DS_Store
+
+# Python scripts (build tools)
+*.py
+
+# Docs (internal)
+docs/
