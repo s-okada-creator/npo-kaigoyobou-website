@@ -40,6 +40,27 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
+    // Close menu when clicking a nav link (prevents overflow:hidden sticking)
+    globalNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        globalNav.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-label', 'メニューを開く');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Reset menu state on resize (prevents overflow:hidden sticking at desktop width)
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 782 && globalNav.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        globalNav.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+    });
+
     // Mobile dropdown toggle
     navItems.forEach(item => {
       const link = item.querySelector('> a');
@@ -133,6 +154,9 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!isValid) {
         e.preventDefault();
         alert('必須項目を入力してください。');
+      } else {
+        e.preventDefault();
+        alert('お問い合わせありがとうございます。現在システム準備中のため、恐れ入りますがメールまたはお電話にてご連絡ください。');
       }
     });
   });

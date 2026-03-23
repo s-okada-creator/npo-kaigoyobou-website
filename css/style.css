@@ -64,6 +64,7 @@ html {
   font-size: 16px;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -74,6 +75,12 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+html, body {
+  overflow-x: hidden;
 }
 
 a {
@@ -117,6 +124,10 @@ ul, ol {
   max-width: var(--content-width);
   margin: 0 auto;
   padding: 0 24px;
+}
+
+.container .container--narrow {
+  padding: 0;
 }
 
 .section {
@@ -705,7 +716,12 @@ ul, ol {
   border: none;
   cursor: pointer;
   padding: 12px;
+  position: relative;
   z-index: 1100;
+}
+
+.hamburger.active span {
+  background: white;
 }
 
 .hamburger span {
@@ -1879,6 +1895,21 @@ a.news-item:hover .news-item__title {
     padding: 48px 16px;
   }
 
+  .hero__buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero__buttons .btn {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .footer__nav-group li a {
+    padding: 6px 0;
+    display: inline-block;
+  }
+
   .mission-grid {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -1936,14 +1967,49 @@ a.news-item:hover .news-item__title {
     grid-template-columns: 1fr !important;
     gap: 24px !important;
   }
+
+  .chairman-bio {
+    flex-direction: column !important;
+    gap: 24px !important;
+    align-items: center !important;
+  }
+
+  .chairman-bio > img {
+    max-width: 200px !important;
+  }
+
+  .featured-event-inner {
+    flex-wrap: wrap !important;
+    padding: 20px !important;
+    gap: 16px !important;
+  }
+
+  .data-table,
+  .data-table tbody,
+  .data-table tr,
+  .data-table th,
+  .data-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .data-table th {
+    border-bottom: none;
+    padding-bottom: 4px;
+    font-weight: 700;
+  }
+
+  .data-table td {
+    padding-top: 4px;
+  }
+
+  .data-table tr {
+    border-bottom: 1px solid var(--color-border);
+    padding: 12px 0;
+  }
 }
 
 @media (max-width: 480px) {
-  .hero__buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .footer__nav {
     grid-template-columns: 1fr;
   }
