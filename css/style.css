@@ -1951,20 +1951,13 @@ a.news-item:hover .news-item__title {
     color: white;
   }
 
-  .nav-item > a {
-    padding: 14px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.15);
-    font-size: 1rem;
-    color: rgba(255,255,255,0.9);
-  }
-
   .dropdown {
     position: static;
     opacity: 1;
     visibility: visible;
     transform: none;
     box-shadow: none;
-    background: rgba(255,255,255,0.08);
+    background: #f9f9f9;
     border-radius: 0;
     display: none;
   }
@@ -1974,14 +1967,14 @@ a.news-item:hover .news-item__title {
   }
 
   .dropdown a {
-    color: rgba(255,255,255,0.8);
-    border-bottom-color: rgba(255,255,255,0.08);
+    color: #333;
+    border-bottom-color: #eee;
     padding: 14px 24px;
   }
 
   .dropdown a:hover {
-    background: rgba(255,255,255,0.05);
-    color: white;
+    background: #f0f0f0;
+    color: var(--color-primary);
     padding-left: 32px;
   }
 
