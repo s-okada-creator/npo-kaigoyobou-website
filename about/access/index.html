@@ -7,8 +7,12 @@
   <title>アクセス - 日本介護予防推進協会</title>
   <link rel="stylesheet" href="../../css/style.css">
   <link rel="icon" href="../../images/favicon.ico">
+  <meta property="og:title" content="アクセス - 日本介護予防推進協会">
+  <meta property="og:description" content="日本介護予防推進協会へのアクセス方法・地図">
+  <meta property="og:type" content="website">
 </head>
 <body>
+  <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
   <header class="main-header">
     <div class="container">
       <a href="/" class="header-logo">
@@ -36,17 +40,18 @@
   </nav>
 
   <!-- Page Header -->
-  <section class="page-header">
+  <div class="page-header">
     <div class="page-header__bg"></div>
     <div class="page-header__bg-image" style="background-image: url('../../images/page-header-about.jpg');"></div>
     <div class="container">
       <div class="page-header__content">
-        <div class="page-header__en">Access</div>
+        <div class="page-header__en" lang="en">Access</div>
         <h1 class="page-header__title">アクセス</h1>
       </div>
     </div>
-  </section>
+  </div>
 
+  <main id="main-content">
   <nav class="breadcrumb" aria-label="パンくずリスト">
     <ol class="breadcrumb__list" itemscope itemtype="https://schema.org/BreadcrumbList">
       <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -68,7 +73,7 @@
   <section class="section">
     <div class="container">
       <div class="container--narrow">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px;">
+        <div class="info-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px;">
           <div>
             <h2 style="font-size: 1.5rem; font-weight: 700; color: var(--color-primary); margin-bottom: 24px;">所在地</h2>
             <div style="color: var(--color-text-sub); line-height: 1.9;">
@@ -91,24 +96,9 @@
 
           <div>
             <h2 style="font-size: 1.5rem; font-weight: 700; color: var(--color-primary); margin-bottom: 24px;">交通アクセス</h2>
-            <div style="color: var(--color-text-sub); line-height: 1.9;">
-              <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--color-text); margin-top: 24px; margin-bottom: 8px;">電車でお越しの場合</h3>
-              <p style="margin-bottom: 16px;">
-                京阪本線「萱島駅」より徒歩約12分<br>
-                京阪本線「大和田駅」より徒歩約15分<br>
-                京阪本線「寝屋川市駅」より徒歩約20分
-              </p>
-
-              <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--color-text); margin-top: 24px; margin-bottom: 8px;">バスでお越しの場合</h3>
-              <p style="margin-bottom: 16px;">
-                京阪バス「神田元町」バス停より徒歩約3分
-              </p>
-
-              <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--color-text); margin-top: 24px; margin-bottom: 8px;">お車でお越しの場合</h3>
-              <p style="margin-bottom: 16px;">
-                近隣のコインパーキングをご利用ください。
-              </p>
-            </div>
+            <p style="color: var(--color-text-sub); line-height: 1.9; margin-top: 16px;">
+              京阪本線「萱島駅」より徒歩約5分
+            </p>
           </div>
         </div>
 
@@ -131,6 +121,7 @@
     </div>
   </section>
 
+  </main>
   <footer class="footer">
     <div class="container">
       <div class="footer__top">
