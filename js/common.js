@@ -9,55 +9,64 @@ document.addEventListener('DOMContentLoaded', function() {
   const navItems = document.querySelectorAll('.nav-item');
 
   if (hamburger && globalNav) {
-    hamburger.addEventListener('click', function() {
-      const isOpen = hamburger.classList.toggle('active');
-      globalNav.classList.toggle('active');
-      hamburger.setAttribute('aria-expanded', String(isOpen));
-      hamburger.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
+    // Create overlay element
+    const overlay = document.createElement('div');
+    overlay.className = 'nav-overlay';
+    document.body.appendChild(overlay);
 
-    // Close menu when clicking outside
-    document.addEventListener('click', function(e) {
-      if (!globalNav.contains(e.target) && !hamburger.contains(e.target)) {
-        hamburger.classList.remove('active');
-        globalNav.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', 'false');
-        hamburger.setAttribute('aria-label', 'メニューを開く');
-        document.body.style.overflow = '';
+    // Create close button inside nav
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'nav-close';
+    closeBtn.setAttribute('aria-label', 'メニューを閉じる');
+    closeBtn.setAttribute('type', 'button');
+    globalNav.insertBefore(closeBtn, globalNav.firstChild);
+
+    function openMenu() {
+      globalNav.classList.add('active');
+      overlay.classList.add('active');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      globalNav.classList.remove('active');
+      overlay.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    // Open menu
+    hamburger.addEventListener('click', function() {
+      if (globalNav.classList.contains('active')) {
+        closeMenu();
+      } else {
+        openMenu();
       }
     });
 
-    // Close menu on Escape key
+    // Close menu: overlay click
+    overlay.addEventListener('click', closeMenu);
+
+    // Close menu: close button
+    closeBtn.addEventListener('click', closeMenu);
+
+    // Close menu: Escape key
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape' && globalNav.classList.contains('active')) {
-        hamburger.classList.remove('active');
-        globalNav.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', 'false');
-        hamburger.setAttribute('aria-label', 'メニューを開く');
-        document.body.style.overflow = '';
+        closeMenu();
         hamburger.focus();
       }
     });
 
-    // Close menu when clicking a nav link (prevents overflow:hidden sticking)
+    // Close menu: nav link click
     globalNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', function() {
-        hamburger.classList.remove('active');
-        globalNav.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', 'false');
-        hamburger.setAttribute('aria-label', 'メニューを開く');
-        document.body.style.overflow = '';
-      });
+      link.addEventListener('click', closeMenu);
     });
 
-    // Reset menu state on resize (prevents overflow:hidden sticking at desktop width)
+    // Reset on resize
     window.addEventListener('resize', function() {
       if (window.innerWidth > 782 && globalNav.classList.contains('active')) {
-        hamburger.classList.remove('active');
-        globalNav.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
+        closeMenu();
       }
     });
 
