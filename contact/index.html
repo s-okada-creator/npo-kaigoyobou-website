@@ -69,65 +69,19 @@
     <section class="section">
       <div class="container">
         <div class="container--narrow">
-          <p class="form-intro">
-            お問い合わせは以下のフォームよりお願いいたします。<br>
-            営業目的でのご利用はご遠慮ください。
-          </p>
-
-          <!-- NOTE: action先はサーバーサイド実装に合わせて変更してください -->
-          <form action="#" method="post" class="form-container" novalidate>
-            <div class="form-group">
-              <label for="contact-name" class="form-label">
-                お名前 <span class="required" aria-hidden="true">必須</span>
-              </label>
-              <input type="text" id="contact-name" name="name" class="form-input" required autocomplete="name">
-            </div>
-
-            <div class="form-group">
-              <label for="contact-email" class="form-label">
-                メールアドレス <span class="required" aria-hidden="true">必須</span>
-              </label>
-              <input type="email" id="contact-email" name="email" class="form-input" required autocomplete="email">
-            </div>
-
-            <div class="form-group">
-              <label for="contact-tel" class="form-label">
-                電話番号 <span class="optional">任意</span>
-              </label>
-              <input type="tel" id="contact-tel" name="tel" class="form-input" autocomplete="tel">
-            </div>
-
-            <div class="form-group">
-              <label for="contact-category" class="form-label">
-                お問い合わせ種別 <span class="required" aria-hidden="true">必須</span>
-              </label>
-              <select id="contact-category" name="category" class="form-select" required>
-                <option value="">選択してください</option>
-                <option value="activity">活動内容について</option>
-                <option value="membership">入会について</option>
-                <option value="donation">寄付について</option>
-                <option value="volunteer">ボランティアについて</option>
-                <option value="media">取材・メディア関連</option>
-                <option value="other">その他</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="contact-message" class="form-label">
-                お問い合わせ内容 <span class="required" aria-hidden="true">必須</span>
-              </label>
-              <textarea id="contact-message" name="message" class="form-textarea" required></textarea>
-            </div>
-
-            <div class="form-submit-group">
-              <button type="submit" class="btn btn--primary btn--lg">送信する</button>
-            </div>
-
-            <p class="form-note">
-              ※送信後、自動返信メールをお送りいたします。<br>
-              ※お問い合わせへの回答には数日かかる場合がございます。
+          <div style="text-align:center;padding:48px 24px;background:var(--color-bg-light);border-radius:var(--radius-lg);">
+            <p style="font-size:1.0625rem;color:var(--color-text);line-height:2;margin-bottom:8px;">
+              お問い合わせは以下のフォームよりお願いいたします。
             </p>
-          </form>
+            <p style="font-size:0.875rem;color:var(--color-text-sub);margin-bottom:32px;">
+              営業目的でのご利用はご遠慮ください。<br>
+              お問い合わせへの回答には数日かかる場合がございます。
+            </p>
+            <a href="https://forms.gle/PaGaUeb8hg7YjNoh9" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg">お問い合わせフォームへ</a>
+            <p style="margin-top:24px;font-size:0.875rem;color:var(--color-text-sub);">
+              メールでのお問い合わせ：<a href="mailto:hello@npo-nihon-kaigoyobou.com" style="color:var(--color-primary);">hello@npo-nihon-kaigoyobou.com</a>
+            </p>
+          </div>
         </div>
       </div>
     </section>

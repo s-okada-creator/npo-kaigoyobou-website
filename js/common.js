@@ -127,6 +127,25 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  // Back to Top button
+  const topBtn = document.createElement('button');
+  topBtn.className = 'back-to-top';
+  topBtn.setAttribute('aria-label', 'ページの先頭へ戻る');
+  topBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>';
+  document.body.appendChild(topBtn);
+
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) {
+      topBtn.classList.add('visible');
+    } else {
+      topBtn.classList.remove('visible');
+    }
+  });
+
+  topBtn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
   // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
