@@ -2264,7 +2264,7 @@ a.news-item:hover .news-item__title {
   display: grid;
   grid-template-columns: 280px 1fr;
   gap: 3rem;
-  align-items: start;
+  align-items: center;
 }
 .greeting__photo {
   text-align: center;
