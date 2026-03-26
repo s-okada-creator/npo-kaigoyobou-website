@@ -124,37 +124,58 @@
 
           <!-- 年会費 -->
           <h2 style="font-size: 1.75rem; font-weight: 700; color: var(--color-primary); margin-top: 64px; margin-bottom: 32px; text-align:center;">年会費</h2>
-          <div style="overflow-x:auto;">
-            <table class="data-table" style="margin:0 auto;max-width:640px;">
-              <thead>
-                <tr>
-                  <th>会員種別</th>
-                  <th>登録人数</th>
-                  <th>4月〜9月入会</th>
-                  <th>10月〜3月入会</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>個人会員</strong></td>
-                  <td>1名</td>
-                  <td>10,000円</td>
-                  <td>5,000円</td>
-                </tr>
-                <tr>
-                  <td><strong>法人会員A</strong></td>
-                  <td>5名まで</td>
-                  <td>30,000円</td>
-                  <td>15,000円</td>
-                </tr>
-                <tr>
-                  <td><strong>法人会員B</strong></td>
-                  <td>6〜10名</td>
-                  <td>50,000円</td>
-                  <td>25,000円</td>
-                </tr>
-              </tbody>
-            </table>
+          <div style="display:grid;gap:16px;max-width:640px;margin:0 auto;">
+            <!-- 個人会員 -->
+            <div style="background:var(--color-bg-light);border-radius:var(--radius-lg);padding:24px;border-left:4px solid var(--color-primary);">
+              <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+                <h3 style="font-size:1.125rem;font-weight:700;color:var(--color-primary);margin:0;">個人会員</h3>
+                <span style="font-size:0.875rem;color:var(--color-text-light);background:white;padding:4px 12px;border-radius:20px;">登録：1名</span>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                <div style="background:white;padding:14px;border-radius:var(--radius-md);text-align:center;">
+                  <div style="font-size:0.75rem;color:var(--color-text-light);margin-bottom:4px;">4月〜9月入会</div>
+                  <div style="font-size:1.25rem;font-weight:700;color:var(--color-text);">10,000<span style="font-size:0.875rem;">円</span></div>
+                </div>
+                <div style="background:white;padding:14px;border-radius:var(--radius-md);text-align:center;">
+                  <div style="font-size:0.75rem;color:var(--color-text-light);margin-bottom:4px;">10月〜3月入会</div>
+                  <div style="font-size:1.25rem;font-weight:700;color:var(--color-text);">5,000<span style="font-size:0.875rem;">円</span></div>
+                </div>
+              </div>
+            </div>
+            <!-- 法人会員A -->
+            <div style="background:var(--color-bg-light);border-radius:var(--radius-lg);padding:24px;border-left:4px solid var(--color-primary);">
+              <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+                <h3 style="font-size:1.125rem;font-weight:700;color:var(--color-primary);margin:0;">法人会員A</h3>
+                <span style="font-size:0.875rem;color:var(--color-text-light);background:white;padding:4px 12px;border-radius:20px;">登録：5名まで</span>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                <div style="background:white;padding:14px;border-radius:var(--radius-md);text-align:center;">
+                  <div style="font-size:0.75rem;color:var(--color-text-light);margin-bottom:4px;">4月〜9月入会</div>
+                  <div style="font-size:1.25rem;font-weight:700;color:var(--color-text);">30,000<span style="font-size:0.875rem;">円</span></div>
+                </div>
+                <div style="background:white;padding:14px;border-radius:var(--radius-md);text-align:center;">
+                  <div style="font-size:0.75rem;color:var(--color-text-light);margin-bottom:4px;">10月〜3月入会</div>
+                  <div style="font-size:1.25rem;font-weight:700;color:var(--color-text);">15,000<span style="font-size:0.875rem;">円</span></div>
+                </div>
+              </div>
+            </div>
+            <!-- 法人会員B -->
+            <div style="background:var(--color-bg-light);border-radius:var(--radius-lg);padding:24px;border-left:4px solid var(--color-primary);">
+              <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+                <h3 style="font-size:1.125rem;font-weight:700;color:var(--color-primary);margin:0;">法人会員B</h3>
+                <span style="font-size:0.875rem;color:var(--color-text-light);background:white;padding:4px 12px;border-radius:20px;">登録：6〜10名</span>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                <div style="background:white;padding:14px;border-radius:var(--radius-md);text-align:center;">
+                  <div style="font-size:0.75rem;color:var(--color-text-light);margin-bottom:4px;">4月〜9月入会</div>
+                  <div style="font-size:1.25rem;font-weight:700;color:var(--color-text);">50,000<span style="font-size:0.875rem;">円</span></div>
+                </div>
+                <div style="background:white;padding:14px;border-radius:var(--radius-md);text-align:center;">
+                  <div style="font-size:0.75rem;color:var(--color-text-light);margin-bottom:4px;">10月〜3月入会</div>
+                  <div style="font-size:1.25rem;font-weight:700;color:var(--color-text);">25,000<span style="font-size:0.875rem;">円</span></div>
+                </div>
+              </div>
+            </div>
           </div>
           <p style="text-align:center;margin-top:16px;font-size:0.875rem;color:var(--color-text-sub);line-height:1.8;">
             ※ 年度は4月〜翌3月です。10月以降のご入会は半期分の会費となります。
