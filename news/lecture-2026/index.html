@@ -3,126 +3,822 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="特別講演会「地域在宅看護におけるAI技術の活用の有用性」2026年3月27日開催 - 日本介護予防推進協会">
+  <meta name="description" content="2026年3月27日に開催した特別講演会の開催報告です。大阪大学 石井豊恵教授のご講演とAI活用デモを行い、オンライン111名・会場51名が参加しました。アーカイブ動画も公開中です。">
   <meta property="og:title" content="特別講演会「地域在宅看護におけるAI技術の活用の有用性」開催報告 - 日本介護予防推進協会">
-  <meta property="og:description" content="2026年3月27日（金）寝屋川市立市民会館にて、大阪大学 石井豊恵教授による基調講演とAIデモンストレーションを開催します。参加無料・先着70名。">
+  <meta property="og:description" content="2026年3月27日に開催した特別講演会の開催報告です。大阪大学 石井豊恵教授のご講演とAI活用デモを行い、オンライン111名・会場51名が参加しました。アーカイブ動画も公開中です。">
   <meta property="og:type" content="article">
   <title>特別講演会「地域在宅看護におけるAI技術の活用の有用性」開催報告 - 日本介護予防推進協会</title>
   <link rel="stylesheet" href="../../css/style.css">
   <link rel="icon" href="../../images/favicon.ico">
   <style>
-    .event-info-box {
-      background: var(--color-bg-light);
-      border-left: 4px solid var(--color-primary);
-      border-radius: 0 var(--radius-md) var(--radius-md) 0;
-      padding: 28px 32px;
-      margin: 32px 0;
+    .report-article {
+      display: grid;
+      gap: 56px;
     }
-    .event-info-box dt {
-      font-weight: 600;
-      color: var(--color-primary);
-      font-size: 0.875rem;
-      margin-top: 16px;
+    .report-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
     }
-    .event-info-box dt:first-child {
-      margin-top: 0;
-    }
-    .event-info-box dd {
-      margin-left: 0;
-      margin-top: 4px;
-      color: var(--color-text);
-      line-height: 1.8;
-    }
-    .speaker-card {
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
-      padding: 24px;
-      background: var(--color-bg-light);
-      border-radius: var(--radius-md);
-      margin-bottom: 16px;
-    }
-    .speaker-card__icon {
-      width: 56px;
-      height: 56px;
-      background: var(--color-primary);
-      color: white;
-      border-radius: 50%;
-      display: flex;
+    .report-chip {
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.25rem;
+      min-height: 32px;
+      padding: 6px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+    .report-chip--solid {
+      background: rgba(0, 64, 152, 0.06);
+      color: var(--color-primary-dark);
+      border: 1px solid rgba(0, 64, 152, 0.12);
+      box-shadow: none;
+    }
+    .report-chip--ghost {
+      background: rgba(0, 64, 152, 0.03);
+      color: var(--color-primary);
+      border: 1px solid rgba(0, 64, 152, 0.08);
+    }
+    .report-hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(28px, 5vw, 48px);
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at top right, rgba(25, 140, 210, 0.10) 0, rgba(25, 140, 210, 0) 36%),
+        linear-gradient(180deg, #ffffff 0%, #f7fafd 100%);
+      border: 1px solid rgba(0, 64, 152, 0.08);
+      box-shadow: 0 10px 30px rgba(7, 46, 94, 0.06);
+    }
+    .report-hero::after {
+      content: "";
+      position: absolute;
+      inset: auto auto 0 0;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(25, 140, 210, 0.10) 0%, rgba(25, 140, 210, 0) 74%);
+      transform: translate(-32%, 30%);
+      pointer-events: none;
+    }
+    .report-hero__title {
+      margin: 0;
+      font-size: clamp(1.9rem, 4.3vw, 2.85rem);
+      line-height: 1.28;
+      color: var(--color-primary-dark);
+      letter-spacing: 0.01em;
+      text-wrap: balance;
+    }
+    .report-hero__lead {
+      margin: 20px 0 0;
+      max-width: 40rem;
+      font-size: 1.125rem;
+      line-height: 1.9;
+      color: var(--color-text-sub);
+    }
+    .report-hero__meta {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 30px;
+    }
+    .report-hero__meta-card {
+      padding: 16px 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(0, 64, 152, 0.08);
+      box-shadow: 0 4px 14px rgba(17, 54, 100, 0.04);
+    }
+    .report-hero__meta-card dt {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+    .report-hero__meta-card dd {
+      margin: 0;
+      font-size: 1.0625rem;
+      color: var(--color-text);
+      line-height: 1.7;
+    }
+    .archive-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 28px;
+      padding-top: 18px;
+      background: transparent;
+      color: var(--color-text);
+      text-decoration: none;
+      border-top: 1px solid rgba(0, 64, 152, 0.10);
+      box-shadow: none;
+      transition: transform 0.2s, color 0.2s;
+      touch-action: manipulation;
+    }
+    .archive-banner:hover,
+    .archive-banner:focus-visible {
+      transform: translateY(-1px);
+      color: var(--color-primary-dark);
+    }
+    .archive-banner:focus-visible {
+      outline: 3px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+    .archive-banner__content {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+    .archive-banner__icon {
+      flex-shrink: 0;
+      width: 34px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background: rgba(0, 64, 152, 0.06);
+      color: var(--color-primary);
+    }
+    .archive-banner__eyebrow {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--color-primary);
+    }
+    .archive-banner__title {
+      display: block;
+      font-size: 1.125rem;
+      font-weight: 700;
+      line-height: 1.5;
+      color: var(--color-primary-dark);
+    }
+    .archive-banner__sub {
+      display: block;
+      margin-top: 3px;
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      color: var(--color-text-sub);
+    }
+    .archive-banner__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+      padding: 0;
+      font-size: 1rem;
+      font-weight: 700;
+      white-space: nowrap;
+      color: var(--color-primary);
+      letter-spacing: 0.08em;
+    }
+    .archive-banner__cta-arrow {
+      font-size: 0.95rem;
+      line-height: 1;
+    }
+
+    .report-summary {
+      display: grid;
+      grid-template-columns: minmax(0, 1.18fr) minmax(260px, 0.82fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+    .report-card {
+      background: white;
+      border-radius: 24px;
+      border: 1px solid rgba(0, 64, 152, 0.08);
+      box-shadow: 0 8px 24px rgba(17, 54, 100, 0.05);
+    }
+    .report-card--soft {
+      background: linear-gradient(180deg, #ffffff 0%, #f9fbfe 100%);
+    }
+    .report-section-intro {
+      padding: 30px 32px;
+    }
+    .report-section-intro__eyebrow {
+      margin-bottom: 10px;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      letter-spacing: 0.12em;
+    }
+    .report-section-intro__title {
+      margin: 0;
+      font-size: 1.5rem;
+      line-height: 1.4;
+      color: var(--color-primary-dark);
+      text-wrap: balance;
+    }
+    .report-section-intro__lead {
+      margin: 14px 0 0;
+      font-size: 1.0625rem;
+      line-height: 1.9;
+      color: var(--color-text-sub);
+    }
+    .report-highlight-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 22px;
+    }
+    .report-highlight-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px 0 0;
+      border-top: 1px solid rgba(0, 64, 152, 0.08);
+    }
+    .report-highlight-item:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+    .report-highlight-item__badge {
+      width: 30px;
+      height: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(0, 64, 152, 0.10);
+      color: var(--color-primary);
+      font-weight: 700;
+      font-size: 0.8125rem;
       flex-shrink: 0;
     }
-    .speaker-card__name {
+    .report-highlight-item__text strong {
+      display: block;
       font-size: 1.0625rem;
-      font-weight: 700;
       color: var(--color-text);
       margin-bottom: 4px;
     }
-    .speaker-card__title {
-      font-size: 0.8125rem;
+    .report-highlight-item__text span {
+      display: block;
+      font-size: 1.0625rem;
+      line-height: 1.7;
       color: var(--color-text-sub);
-      line-height: 1.6;
+    }
+    .report-stats {
+      padding: 26px;
+      display: grid;
+      gap: 14px;
+      background:
+        radial-gradient(circle at top right, rgba(25, 140, 210, 0.08) 0, rgba(25, 140, 210, 0) 42%),
+        linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+      color: var(--color-text);
+    }
+    .report-stats__eyebrow {
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--color-primary);
+    }
+    .report-stats__title {
+      margin: 0;
+      font-size: 1.375rem;
+      line-height: 1.45;
+      color: var(--color-primary-dark);
+      text-wrap: balance;
+    }
+    .report-stats__grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .report-stat {
+      padding: 18px 16px;
+      border-radius: 18px;
+      background: rgba(0, 64, 152, 0.04);
+      border: 1px solid rgba(0, 64, 152, 0.08);
+    }
+    .report-stat__label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.875rem;
+      color: var(--color-text-sub);
+      letter-spacing: 0.08em;
+    }
+    .report-stat__value {
+      font-size: clamp(2rem, 3vw, 2.65rem);
+      font-weight: 700;
+      line-height: 1;
+      color: var(--color-primary-dark);
+      font-variant-numeric: tabular-nums;
+    }
+    .report-stat__value small {
+      font-size: 0.95rem;
+      margin-left: 2px;
+    }
+    .report-stats__note {
+      margin: 6px 0 0;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--color-text-sub);
+    }
+
+    .archive-section {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      scroll-margin-top: 96px;
+    }
+    .archive-copy {
+      padding: 32px 34px 10px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom: none;
+      box-shadow: 0 8px 18px rgba(17, 54, 100, 0.03);
+    }
+    .archive-copy__eyebrow,
+    .report-panel__eyebrow {
+      margin-bottom: 10px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      letter-spacing: 0.12em;
+    }
+    .archive-copy__title,
+    .report-panel__title {
+      margin: 0;
+      font-size: 1.45rem;
+      line-height: 1.45;
+      color: var(--color-primary-dark);
+      text-wrap: balance;
+    }
+    .archive-copy__desc,
+    .report-panel__lead {
+      margin: 14px 0 0;
+      font-size: 1.0625rem;
+      line-height: 1.9;
+      color: var(--color-text-sub);
+    }
+    .archive-copy__list {
+      display: grid;
+      gap: 10px;
+      margin: 24px 0 0;
+    }
+    .archive-copy__list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--color-text);
+    }
+    .archive-copy__list li::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-top: 0.55em;
+      background: var(--color-secondary);
+      flex-shrink: 0;
+    }
+    .archive-player {
+      padding: 0 24px 24px;
+      background: linear-gradient(180deg, #ffffff 0%, #f6fafe 100%);
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+    .archive-player__frame {
+      padding: 14px;
+      border-radius: 24px;
+      background: #f2f7fc;
+      box-shadow: inset 0 0 0 1px rgba(0, 64, 152, 0.06);
+    }
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      overflow: hidden;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #091626 0%, #0c223f 100%);
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .video-placeholder {
+      display: none;
+      position: absolute;
+      inset: 0;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 24px;
+      text-align: center;
+      color: white;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(9, 22, 38, 0.16) 0%, rgba(9, 22, 38, 0.48) 100%);
+    }
+    .video-wrapper iframe[src="about:blank"] + .video-placeholder {
+      display: flex;
+    }
+    .video-placeholder__icon {
+      width: 72px;
+      height: 72px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+    .video-placeholder__text {
+      max-width: 28rem;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.94);
+    }
+    .archive-player__caption {
+      margin-top: 14px;
+      font-size: 0.9375rem;
+      line-height: 1.75;
+      color: var(--color-text-sub);
+    }
+
+    .report-dual {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 24px;
+      align-items: start;
+    }
+    .report-panel {
+      padding: 30px 32px;
     }
     .program-timeline {
       position: relative;
+      margin-top: 24px;
       padding-left: 32px;
-      margin: 24px 0;
     }
     .program-timeline::before {
       content: "";
       position: absolute;
-      left: 8px;
-      top: 8px;
-      bottom: 8px;
+      left: 10px;
+      top: 4px;
+      bottom: 4px;
       width: 2px;
-      background: var(--color-border);
+      background: linear-gradient(180deg, rgba(0, 64, 152, 0.22) 0%, rgba(25, 140, 210, 0.20) 100%);
     }
     .program-item {
       position: relative;
-      padding-bottom: 24px;
+      padding: 0 0 20px 0;
+    }
+    .program-item:last-child {
+      padding-bottom: 0;
     }
     .program-item::before {
       content: "";
       position: absolute;
       left: -28px;
-      top: 8px;
-      width: 10px;
-      height: 10px;
-      background: var(--color-primary);
+      top: 7px;
+      width: 12px;
+      height: 12px;
       border-radius: 50%;
-      border: 2px solid white;
-      box-shadow: 0 0 0 2px var(--color-primary);
+      background: white;
+      box-shadow: 0 0 0 3px var(--color-primary);
     }
     .program-item__time {
       font-size: 0.875rem;
       font-weight: 700;
+      letter-spacing: 0.06em;
       color: var(--color-primary);
-      margin-bottom: 4px;
     }
     .program-item__content {
-      font-size: 0.9375rem;
+      margin-top: 4px;
+      font-size: 1rem;
+      line-height: 1.8;
       color: var(--color-text);
-      line-height: 1.7;
     }
-    .cta-register {
-      text-align: center;
-      padding: 40px 32px;
-      background: linear-gradient(135deg, #003380 0%, #004098 50%, #198cd2 100%);
-      border-radius: var(--radius-lg);
-      color: white;
-      margin: 40px 0;
+    .program-item__content strong {
+      font-size: 0.95rem;
+      color: var(--color-primary-dark);
     }
-    .cta-register__title {
-      font-size: 1.25rem;
+    .speaker-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+    }
+    .speaker-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 16px;
+      align-items: center;
+      padding: 20px;
+      background: linear-gradient(180deg, #fbfdff 0%, #f5f9fd 100%);
+      border: 1px solid rgba(0, 64, 152, 0.08);
+      border-radius: 18px;
+    }
+    .speaker-card__photo {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(0, 64, 152, 0.10);
+      flex-shrink: 0;
+    }
+    .speaker-card__photo--ishii {
+      object-position: center 20%;
+    }
+    .speaker-card__photo--choki,
+    .speaker-card__photo--okada {
+      object-position: center 15%;
+    }
+    .speaker-card__part {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      background: rgba(0, 64, 152, 0.08);
+      color: var(--color-primary);
+      font-size: 0.875rem;
       font-weight: 700;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
-    .cta-register__desc {
+    .speaker-card__name {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+    .speaker-card__title {
+      margin-top: 4px;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--color-text-sub);
+    }
+
+    .benefit-grid {
+      display: grid;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .benefit-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, #f9fbfe 0%, #f4f8fd 100%);
+      border: 1px solid rgba(0, 64, 152, 0.06);
+    }
+    .benefit-card__number {
+      width: 34px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--color-primary);
+      color: white;
+      font-weight: 700;
+      font-size: 0.875rem;
+    }
+    .benefit-card__title {
+      font-size: 1.0625rem;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+    .benefit-card__text {
+      margin-top: 4px;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--color-text-sub);
+    }
+    .audience-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .audience-list li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(0, 64, 152, 0.04);
+      color: var(--color-text);
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+    .audience-list li::before {
+      content: "•";
+      color: var(--color-primary);
+      font-weight: 700;
+    }
+
+    .support-cta {
+      position: relative;
+      padding: 10px 0 0;
+      border-radius: 0;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+    }
+    .support-cta::before {
+      content: "";
+      display: block;
+      height: 1px;
+      margin-bottom: 28px;
+      background: linear-gradient(90deg, rgba(0, 64, 152, 0.14) 0%, rgba(0, 64, 152, 0.04) 100%);
+    }
+    .support-cta__header {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      gap: 28px;
+      align-items: end;
+      max-width: none;
+      margin-bottom: 28px;
+    }
+    .support-cta__intro {
+      display: grid;
+      gap: 10px;
+    }
+    .support-cta__eyebrow {
+      margin-bottom: 0;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      letter-spacing: 0.12em;
+    }
+    .support-cta__title {
+      margin: 0;
+      max-width: 14ch;
+      font-size: clamp(1.75rem, 3.4vw, 2.35rem);
+      line-height: 1.3;
+      color: var(--color-primary-dark);
+      text-wrap: balance;
+    }
+    .support-cta__desc {
+      margin: 0;
+      font-size: 1.0625rem;
+      line-height: 1.95;
+      color: var(--color-text-sub);
+    }
+    .support-cta__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.96fr) minmax(0, 0.96fr);
+      gap: 18px;
+    }
+    .support-card {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-height: 240px;
+      padding: 26px 24px 22px;
+      border-radius: 24px;
+      text-decoration: none;
+      border: 1px solid rgba(0, 64, 152, 0.08);
+      box-shadow: 0 8px 24px rgba(17, 54, 100, 0.05);
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s, background-color 0.2s;
+      touch-action: manipulation;
+    }
+    .support-card:hover,
+    .support-card:focus-visible {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 28px rgba(0, 64, 152, 0.10);
+    }
+    .support-card:focus-visible {
+      outline: 3px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+    .support-card--primary {
+      grid-row: auto;
+      background: linear-gradient(180deg, #fbfdff 0%, #eef5fc 100%);
+      color: var(--color-text);
+      border-color: rgba(0, 64, 152, 0.18);
+    }
+    .support-card--secondary {
+      background: white;
+      color: var(--color-text);
+    }
+    .support-card__icon {
+      display: none;
+    }
+    .support-card__title {
+      font-size: 1.3125rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--color-primary-dark);
+      text-wrap: balance;
+    }
+    .support-card__desc {
+      font-size: 1rem;
+      line-height: 1.85;
+      max-width: 26ch;
+    }
+    .support-card--primary .support-card__desc {
+      color: var(--color-text-sub);
+    }
+    .support-card--secondary .support-card__desc {
+      color: var(--color-text-sub);
+    }
+    .support-card__action {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: auto;
       font-size: 0.9375rem;
-      opacity: 0.9;
-      margin-bottom: 24px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+    .support-card--primary .support-card__action {
+      color: var(--color-primary-dark);
+    }
+    .support-card--secondary .support-card__action {
+      color: var(--color-primary);
+    }
+
+    .contact-note {
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(0, 64, 152, 0.08);
+      font-size: 1rem;
+      line-height: 1.9;
+      color: var(--color-text-sub);
+    }
+    .contact-note a {
+      color: var(--color-primary);
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+    }
+    .report-back {
+      margin-top: -8px;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .report-hero__meta,
+      .report-summary,
+      .archive-section,
+      .report-dual,
+      .support-cta__grid {
+        grid-template-columns: 1fr;
+      }
+      .support-cta__header {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .report-article {
+        gap: 40px;
+      }
+      .report-hero,
+      .report-section-intro,
+      .report-panel,
+      .support-cta {
+        padding: 24px 20px;
+      }
+      .archive-copy {
+        padding: 24px 20px 10px;
+      }
+      .archive-player {
+        padding: 0 20px 20px;
+      }
+      .report-hero__meta-card,
+      .report-stat,
+      .speaker-card,
+      .benefit-card,
+      .audience-list li,
+      .support-card {
+        padding: 18px;
+      }
+      .support-card {
+        min-height: auto;
+      }
+      .archive-banner {
+        flex-direction: column;
+        align-items: stretch;
+        padding-top: 16px;
+      }
+      .archive-banner__cta {
+        align-self: flex-start;
+      }
+      .report-stats__grid {
+        grid-template-columns: 1fr;
+      }
+      .speaker-card {
+        grid-template-columns: 1fr;
+      }
+      .speaker-card__photo {
+        width: 72px;
+        height: 72px;
+      }
     }
   </style>
 </head>
@@ -183,158 +879,297 @@
     <section class="section">
       <div class="container">
         <div class="container--narrow">
-          <article>
-            <div class="news-item__date">2026.02.01</div>
-            <div class="news-item__category news-item__category--event">イベント</div>
-            <h2 style="margin-top: 16px; margin-bottom: 16px; font-size: 1.75rem; line-height: 1.5;">特別講演会「地域在宅看護におけるAI技術の活用の有用性」開催報告</h2>
-
-            <div class="article-body">
-              <p>
-                NPO法人 日本介護予防推進協会は、地域在宅看護の現場においてAI技術がどのように活用され、有用性があるのかを専門家が解説する特別講演会を開催いたします。
+          <article class="report-article">
+            <header class="report-hero">
+              <div class="report-kicker">
+                <span class="report-chip report-chip--solid">開催報告</span>
+                <span class="report-chip report-chip--ghost">2026.03.27 Fri.</span>
+              </div>
+              <h2 class="report-hero__title">特別講演会「地域在宅看護におけるAI技術の活用の有用性」開催報告</h2>
+              <p class="report-hero__lead">
+                2026年3月27日、寝屋川市立市民会館にて特別講演会を開催しました。大阪大学 石井豊恵先生のご講演と、長木辰樹氏・岡田真治氏によるAI解説と業務改善デモを通じて、地域在宅看護の現場で活かせる知見を共有しました。
               </p>
-              <p>
-                訪問看護記録の作成支援をはじめとした実践的な事例紹介や、最新のAIデモンストレーションを通じて、現場で活かせる知見をお届けします。
-              </p>
+              <div class="report-hero__meta">
+                <dl class="report-hero__meta-card">
+                  <dt>開催日時</dt>
+                  <dd>2026年3月27日（金）18:00〜20:40</dd>
+                </dl>
+                <dl class="report-hero__meta-card">
+                  <dt>会場</dt>
+                  <dd>寝屋川市立市民会館 3階 講義室<br>大阪府寝屋川市秦町41番1号</dd>
+                </dl>
+                <dl class="report-hero__meta-card">
+                  <dt>参加形式</dt>
+                  <dd>会場参加 ／ オンライン参加</dd>
+                </dl>
+              </div>
+              <a href="#archive" class="archive-banner" aria-label="講演会アーカイブ動画を視聴する">
+                <span class="archive-banner__content">
+                  <span class="archive-banner__icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span>
+                    <span class="archive-banner__eyebrow">ARCHIVE</span>
+                    <span class="archive-banner__title">講演会アーカイブ動画を掲載しています</span>
+                    <span class="archive-banner__sub">当日の講演とAI活用デモを、このページ内で続けてご覧いただけます。</span>
+                  </span>
+                </span>
+                <span class="archive-banner__cta" aria-hidden="true">
+                  アーカイブを見る
+                  <span class="archive-banner__cta-arrow">&rarr;</span>
+                </span>
+              </a>
+            </header>
 
-              <!-- こんな方におすすめ -->
-              <div style="background:#f0f6ff;border-radius:var(--radius-lg);padding:28px 32px;margin:32px 0;">
-                <h3 style="font-size:1.125rem;font-weight:700;color:var(--color-primary);margin-bottom:16px;">こんな方におすすめです</h3>
-                <ul style="list-style:none;padding:0;margin:0;display:grid;gap:10px;">
-                  <li style="display:flex;align-items:flex-start;gap:10px;font-size:0.9375rem;line-height:1.6;"><span style="color:var(--color-primary);font-weight:700;flex-shrink:0;">&#10003;</span>訪問看護の記録作成に毎日1時間以上かかっている</li>
-                  <li style="display:flex;align-items:flex-start;gap:10px;font-size:0.9375rem;line-height:1.6;"><span style="color:var(--color-primary);font-weight:700;flex-shrink:0;">&#10003;</span>AIが気になるけど、何から始めればいいかわからない</li>
-                  <li style="display:flex;align-items:flex-start;gap:10px;font-size:0.9375rem;line-height:1.6;"><span style="color:var(--color-primary);font-weight:700;flex-shrink:0;">&#10003;</span>現場の事務作業・書類業務の負担を減らしたい</li>
-                  <li style="display:flex;align-items:flex-start;gap:10px;font-size:0.9375rem;line-height:1.6;"><span style="color:var(--color-primary);font-weight:700;flex-shrink:0;">&#10003;</span>AI活用の実例を自分の目で見てみたい</li>
-                  <li style="display:flex;align-items:flex-start;gap:10px;font-size:0.9375rem;line-height:1.6;"><span style="color:var(--color-primary);font-weight:700;flex-shrink:0;">&#10003;</span>業種問わず、AIによる業務改善に興味がある</li>
+            <section class="report-summary" aria-labelledby="report-summary-title">
+              <div class="report-card report-card--soft report-section-intro">
+                <div class="report-section-intro__eyebrow">HIGHLIGHTS</div>
+                <h3 id="report-summary-title" class="report-section-intro__title">当日は、講演・AI基礎解説・実演を通して現場に直結する活用イメージを共有しました。</h3>
+                <p class="report-section-intro__lead">
+                  石井豊恵先生によるご講演では、地域在宅看護におけるAI活用の可能性を専門的な視点から整理いただきました。続く第二部・第三部では、長木辰樹氏がAIの基本をわかりやすく解説し、岡田真治氏が実際の活用デモを通して業務改善の具体像を紹介しました。
+                </p>
+                <div class="report-highlight-list">
+                  <div class="report-highlight-item">
+                    <span class="report-highlight-item__badge" aria-hidden="true">1</span>
+                    <div class="report-highlight-item__text">
+                      <strong>講演から実演まで、理解を段階的につなぐ構成</strong>
+                      <span>専門的な知見の共有に留まらず、実際の業務へ置き換えるイメージまでつかめる進行でした。</span>
+                    </div>
+                  </div>
+                  <div class="report-highlight-item">
+                    <span class="report-highlight-item__badge" aria-hidden="true">2</span>
+                    <div class="report-highlight-item__text">
+                      <strong>オンライン・会場の双方から高い関心</strong>
+                      <span>現場での記録支援や事務負担軽減への関心が高く、多くの方にご参加いただきました。</span>
+                    </div>
+                  </div>
+                  <div class="report-highlight-item">
+                    <span class="report-highlight-item__badge" aria-hidden="true">3</span>
+                    <div class="report-highlight-item__text">
+                      <strong>アーカイブ公開で継続的に学べる状態を整備</strong>
+                      <span>当日参加できなかった方にも内容をご覧いただけるよう、アーカイブ動画を公開しています。</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="report-card report-stats">
+                <div class="report-stats__eyebrow">EVENT RESULT</div>
+                <h3 class="report-stats__title">多くの皆さまにご参加いただき、大盛況のうちに終了しました。</h3>
+                <div class="report-stats__grid" aria-label="参加実績">
+                  <div class="report-stat">
+                    <span class="report-stat__label">オンライン参加</span>
+                    <span class="report-stat__value">111<small>名</small></span>
+                  </div>
+                  <div class="report-stat">
+                    <span class="report-stat__label">会場参加</span>
+                    <span class="report-stat__value">51<small>名</small></span>
+                  </div>
+                </div>
+                <p class="report-stats__note">ご参加いただいた皆さま、誠にありがとうございました。アーカイブ動画も公開しておりますので、ぜひご活用ください。</p>
+              </div>
+            </section>
+
+            <section id="archive" class="archive-section" aria-labelledby="archive-heading">
+              <div class="report-card archive-copy">
+                <div class="archive-copy__eyebrow">ARCHIVE VIDEO</div>
+                <h3 id="archive-heading" class="archive-copy__title">講演会アーカイブ動画</h3>
+                <p class="archive-copy__desc">当日の講演会の様子を、このページからそのままご視聴いただけます。公開後は視聴画面が表示され、現場でのAI活用に関する講演と実演をあらためて確認できます。</p>
+                <ul class="archive-copy__list">
+                  <li>石井豊恵先生による、地域在宅看護におけるAI活用の講演</li>
+                  <li>長木辰樹氏による、現場目線での「AIとは何か」の解説</li>
+                  <li>岡田真治氏による、実践的なAI活用デモと業務改善の紹介</li>
                 </ul>
-                <p style="margin-top:16px;font-size:0.8125rem;color:var(--color-text-sub);">1つでも当てはまる方は、ぜひご参加ください。</p>
               </div>
-
-              <!-- イベント概要 -->
-              <dl class="event-info-box">
-                <dt>イベント名</dt>
-                <dd>「地域在宅看護におけるAI技術の活用の有用性」特別講演会 2026</dd>
-                <dt>開催日時</dt>
-                <dd>2026年3月27日（金）18:30〜20:30</dd>
-                <dt>会場</dt>
-                <dd>寝屋川市立市民会館 3階 講義室<br>大阪府寝屋川市秦町41番1号</dd>
-                <dt>参加形式</dt>
-                <dd>会場参加 ／ オンライン参加</dd>
-                <dt>参加費</dt>
-                <dd>無料</dd>
-                <dt>定員</dt>
-                <dd>先着70名</dd>
-              </dl>
-
-              <!-- プログラム -->
-              <h3 style="font-size: 1.25rem; color: var(--color-primary); margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--color-secondary);">プログラム</h3>
-
-              <div class="program-timeline">
-                <div class="program-item">
-                  <div class="program-item__time">18:30〜</div>
-                  <div class="program-item__content">
-                    <strong>基調講演</strong><br>
-                    「地域在宅看護におけるAI技術の活用の有用性」
+              <div class="report-card archive-player">
+                <div class="archive-player__frame">
+                  <div class="video-wrapper">
+                    <!--
+                      YouTube動画の差し替え手順:
+                      1. 下の iframe の src="about:blank" を YouTube埋め込みURLに変更
+                         例: src="https://www.youtube.com/embed/XXXXXXXXXXX"
+                      2. その下の <div class="video-placeholder"> ブロックは CSS で自動的に非表示になります
+                    -->
+                    <iframe
+                      src="about:blank"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerpolicy="strict-origin-when-cross-origin"
+                      allowfullscreen
+                      title="特別講演会「地域在宅看護におけるAI技術の活用の有用性」アーカイブ動画"
+                      loading="lazy"
+                    ></iframe>
+                    <div class="video-placeholder" role="status" aria-live="polite" aria-label="動画を準備中です">
+                      <div class="video-placeholder__icon" aria-hidden="true">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                      </div>
+                      <span class="video-placeholder__text">動画を準備中です。公開後はこの枠内に再生画面が表示され、そのまま視聴できます。</span>
+                    </div>
                   </div>
                 </div>
-                <div class="program-item">
-                  <div class="program-item__time">19:30〜</div>
-                  <div class="program-item__content">
-                    <strong>AIデモンストレーション</strong><br>
-                    訪問看護記録作成支援など、実践的なAI活用事例の実演
-                  </div>
-                </div>
-                <div class="program-item">
-                  <div class="program-item__time">20:30</div>
-                  <div class="program-item__content">閉会</div>
-                </div>
+                <p class="archive-player__caption">アーカイブ公開後は、視聴ページへの遷移なしでこの場で再生できます。</p>
               </div>
+            </section>
 
-              <!-- 登壇者 -->
-              <h3 style="font-size: 1.25rem; color: var(--color-primary); margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--color-secondary);">登壇者</h3>
-
-              <div class="speaker-card">
-                <img src="../../images/speaker-ishii.jpg" alt="石井 豊恵 氏" style="width:80px;height:80px;border-radius:50%;object-fit:cover;object-position:center 20%;flex-shrink:0;border:3px solid var(--color-bg-section);">
-                <div>
-                  <div class="speaker-card__name">石井 豊恵 氏</div>
-                  <div class="speaker-card__title">大阪大学大学院 医学系研究科 保健学専攻 教授<br>【基調講演】</div>
-                </div>
-              </div>
-              <div class="speaker-card">
-                <img src="../../images/speaker-okada.jpg" alt="岡田 真治 氏" style="width:80px;height:80px;border-radius:50%;object-fit:cover;object-position:center 15%;flex-shrink:0;border:3px solid var(--color-bg-section);">
-                <div>
-                  <div class="speaker-card__name">岡田 真治 氏</div>
-                  <div class="speaker-card__title">株式会社KASEKI CREATIVE 代表取締役社長<br>【AIデモンストレーション】</div>
-                </div>
-              </div>
-              <div class="speaker-card">
-                <img src="../../images/speaker-choki.jpg" alt="長木 辰樹 氏" style="width:80px;height:80px;border-radius:50%;object-fit:cover;object-position:center 15%;flex-shrink:0;border:3px solid var(--color-bg-section);">
-                <div>
-                  <div class="speaker-card__name">長木 辰樹 氏</div>
-                  <div class="speaker-card__title">AI駆動開発エンジニア ／ 生成AI導入支援スペシャリスト<br>【AIデモンストレーション】</div>
-                </div>
-              </div>
-
-              <!-- この講演で得られること -->
-              <h3 style="font-size: 1.25rem; color: var(--color-primary); margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--color-secondary);">この講演で得られること</h3>
-              <div style="display:grid;gap:16px;margin:24px 0;">
-                <div style="display:flex;gap:16px;align-items:flex-start;">
-                  <div style="width:40px;height:40px;background:var(--color-primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.875rem;flex-shrink:0;">1</div>
-                  <div>
-                    <div style="font-weight:700;font-size:0.9375rem;margin-bottom:4px;">大学教授による最新のAI×看護の知見</div>
-                    <div style="font-size:0.875rem;color:var(--color-text-sub);line-height:1.7;">大阪大学 石井教授が、地域在宅看護におけるAI技術の最前線をわかりやすく解説します。</div>
+            <section class="report-dual" aria-label="プログラムと登壇者">
+              <div class="report-card report-panel">
+                <div class="report-panel__eyebrow">PROGRAM</div>
+                <h3 class="report-panel__title">当日のプログラム</h3>
+                <p class="report-panel__lead">受付から閉会まで、講演・基礎解説・デモ・質疑応答を通して段階的に理解を深められる構成で実施しました。</p>
+                <div class="program-timeline">
+                  <div class="program-item">
+                    <div class="program-item__time">18:00</div>
+                    <div class="program-item__content">受付開始</div>
                   </div>
-                </div>
-                <div style="display:flex;gap:16px;align-items:flex-start;">
-                  <div style="width:40px;height:40px;background:var(--color-primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.875rem;flex-shrink:0;">2</div>
-                  <div>
-                    <div style="font-weight:700;font-size:0.9375rem;margin-bottom:4px;">実際のAIツールをデモで体験</div>
-                    <div style="font-size:0.875rem;color:var(--color-text-sub);line-height:1.7;">訪問看護記録の自動作成など、現場ですぐに使えるAIツールの実演をご覧いただけます。</div>
+                  <div class="program-item">
+                    <div class="program-item__time">18:25</div>
+                    <div class="program-item__content">開会・理事長（古郷 幹彦 氏）ご挨拶</div>
                   </div>
-                </div>
-                <div style="display:flex;gap:16px;align-items:flex-start;">
-                  <div style="width:40px;height:40px;background:var(--color-primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.875rem;flex-shrink:0;">3</div>
-                  <div>
-                    <div style="font-weight:700;font-size:0.9375rem;margin-bottom:4px;">明日から使える業務効率化のヒント</div>
-                    <div style="font-size:0.875rem;color:var(--color-text-sub);line-height:1.7;">専門知識がなくても始められる、AI活用の具体的な第一歩がわかります。</div>
+                  <div class="program-item">
+                    <div class="program-item__time">18:30</div>
+                    <div class="program-item__content"><strong>第一部</strong><br>石井豊恵 先生 ご講演</div>
+                  </div>
+                  <div class="program-item">
+                    <div class="program-item__time">18:50</div>
+                    <div class="program-item__content"><strong>第二部</strong><br>長木辰樹 氏「AIとは何か」</div>
+                  </div>
+                  <div class="program-item">
+                    <div class="program-item__time">19:05</div>
+                    <div class="program-item__content">休憩（10分間）</div>
+                  </div>
+                  <div class="program-item">
+                    <div class="program-item__time">19:15</div>
+                    <div class="program-item__content"><strong>第三部</strong><br>岡田真治 氏「AI活用デモ・業務改善」</div>
+                  </div>
+                  <div class="program-item">
+                    <div class="program-item__time">19:55</div>
+                    <div class="program-item__content">質疑応答</div>
+                  </div>
+                  <div class="program-item">
+                    <div class="program-item__time">20:25</div>
+                    <div class="program-item__content">副理事長（岡田光司 氏）ご挨拶</div>
+                  </div>
+                  <div class="program-item">
+                    <div class="program-item__time">20:40</div>
+                    <div class="program-item__content">閉会</div>
                   </div>
                 </div>
               </div>
-
-              <!-- 対象者 -->
-              <h3 style="font-size: 1.25rem; color: var(--color-primary); margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--color-secondary);">対象者</h3>
-              <ul style="list-style: disc; padding-left: 24px; line-height: 2;">
-                <li>訪問看護ステーション管理者・経営者</li>
-                <li>介護施設スタッフ</li>
-                <li>AI活用に興味のある医療・福祉関係者</li>
-                <li>地域在宅看護に関心のある方</li>
-                <li>事務作業・書類業務の効率化に課題を感じている方</li>
-                <li>業種問わず、AIによる業務改善に興味のある方</li>
-              </ul>
-
-              <!-- 開催報告 -->
-              <div style="margin-top:48px;padding:40px;background:linear-gradient(135deg,var(--color-primary),#1a3a5c);border-radius:var(--radius-lg);color:white;text-align:center;">
-                <div style="font-size:0.875rem;letter-spacing:0.1em;margin-bottom:8px;opacity:0.85;">EVENT REPORT</div>
-                <div style="font-size:1.5rem;font-weight:700;margin-bottom:20px;">【満員御礼】本講演会は大盛況のうちに終了いたしました</div>
-                <div style="display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-bottom:20px;">
-                  <div>
-                    <div style="font-size:2.25rem;font-weight:700;">111<span style="font-size:1rem;">名</span></div>
-                    <div style="font-size:0.8125rem;opacity:0.85;">オンライン参加</div>
+              <div class="report-card report-panel">
+                <div class="report-panel__eyebrow">SPEAKERS</div>
+                <h3 class="report-panel__title">登壇者</h3>
+                <p class="report-panel__lead">プログラムの進行に合わせて、講演・AI基礎解説・デモの各パートを担当いただきました。</p>
+                <div class="speaker-list">
+                  <div class="speaker-card">
+                    <img src="../../images/speaker-ishii.jpg" alt="石井 豊恵 氏" class="speaker-card__photo speaker-card__photo--ishii">
+                    <div>
+                      <span class="speaker-card__part">第一部 ご講演</span>
+                      <div class="speaker-card__name">石井 豊恵 氏</div>
+                      <div class="speaker-card__title">大阪大学大学院 医学系研究科 保健学専攻 教授</div>
+                    </div>
                   </div>
-                  <div>
-                    <div style="font-size:2.25rem;font-weight:700;">51<span style="font-size:1rem;">名</span></div>
-                    <div style="font-size:0.8125rem;opacity:0.85;">会場参加</div>
+                  <div class="speaker-card">
+                    <img src="../../images/speaker-choki.jpg" alt="長木 辰樹 氏" class="speaker-card__photo speaker-card__photo--choki">
+                    <div>
+                      <span class="speaker-card__part">第二部 AIとは何か</span>
+                      <div class="speaker-card__name">長木 辰樹 氏</div>
+                      <div class="speaker-card__title">AI駆動開発エンジニア ／ 生成AI導入支援スペシャリスト</div>
+                    </div>
+                  </div>
+                  <div class="speaker-card">
+                    <img src="../../images/speaker-okada.jpg" alt="岡田 真治 氏" class="speaker-card__photo speaker-card__photo--okada">
+                    <div>
+                      <span class="speaker-card__part">第三部 AI活用デモ・業務改善</span>
+                      <div class="speaker-card__name">岡田 真治 氏</div>
+                      <div class="speaker-card__title">株式会社KASEKI CREATIVE 代表取締役社長</div>
+                    </div>
                   </div>
                 </div>
-                <p style="font-size:0.9375rem;opacity:0.9;line-height:1.8;">ご参加いただいた皆さま、誠にありがとうございました。</p>
               </div>
+            </section>
 
-              <p style="font-size: 0.875rem; color: var(--color-text-sub); margin-top: 24px;">
+            <section class="report-dual" aria-label="得られることと対象者">
+              <div class="report-card report-panel">
+                <div class="report-panel__eyebrow">VALUE</div>
+                <h3 class="report-panel__title">この講演で得られること</h3>
+                <p class="report-panel__lead">専門的な知見だけでなく、現場で活かす具体的なイメージまで持ち帰れる内容として構成しました。</p>
+                <div class="benefit-grid">
+                  <div class="benefit-card">
+                    <span class="benefit-card__number" aria-hidden="true">1</span>
+                    <div>
+                      <div class="benefit-card__title">大学教授による最新のAI×看護の知見</div>
+                      <div class="benefit-card__text">大阪大学 石井教授が、地域在宅看護におけるAI技術の最前線をわかりやすく解説しました。</div>
+                    </div>
+                  </div>
+                  <div class="benefit-card">
+                    <span class="benefit-card__number" aria-hidden="true">2</span>
+                    <div>
+                      <div class="benefit-card__title">実際のAIツールをデモで体験</div>
+                      <div class="benefit-card__text">訪問看護記録の自動作成など、現場ですぐに使えるAIツールの実演内容を確認できます。</div>
+                    </div>
+                  </div>
+                  <div class="benefit-card">
+                    <span class="benefit-card__number" aria-hidden="true">3</span>
+                    <div>
+                      <div class="benefit-card__title">明日から使える業務効率化のヒント</div>
+                      <div class="benefit-card__text">専門知識がなくても始められる、AI活用の具体的な第一歩をイメージできる内容です。</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="report-card report-panel">
+                <div class="report-panel__eyebrow">AUDIENCE</div>
+                <h3 class="report-panel__title">主な対象者</h3>
+                <p class="report-panel__lead">特に、看護・介護の現場で業務改善や記録支援に課題を感じている方々に向けた内容として実施しました。</p>
+                <ul class="audience-list">
+                  <li>訪問看護ステーション管理者・経営者</li>
+                  <li>介護施設スタッフ、医療・福祉関係者</li>
+                  <li>AI活用に関心があるが、何から始めるべきか知りたい方</li>
+                  <li>記録作成や事務作業の負担を減らしたい方</li>
+                  <li>業種を問わず、AIによる業務改善に興味のある方</li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="support-cta" aria-labelledby="support-cta-title">
+              <div class="support-cta__header">
+                <div class="support-cta__intro">
+                  <div class="support-cta__eyebrow">SUPPORT</div>
+                  <h3 id="support-cta-title" class="support-cta__title">この活動を、次の学びと支援につなげていきませんか。</h3>
+                </div>
+                <p class="support-cta__desc">講演会の開催や情報発信は、皆さまの継続的なご支援によって実現しています。まずは入会から、必要に応じて寄付やご相談という形でもご参加いただけます。</p>
+              </div>
+              <div class="support-cta__grid">
+                <a href="/support/membership/" class="support-card support-card--primary" aria-label="入会申し込みページへ進む">
+                  <span class="support-card__icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  </span>
+                  <div class="support-card__title">会員として参加する</div>
+                  <div class="support-card__desc">継続的な会員参加で、講演会や地域支援の活動を支える。</div>
+                  <span class="support-card__action" aria-hidden="true">入会フォームへ &rarr;</span>
+                </a>
+                <a href="/support/donation/" class="support-card support-card--secondary" aria-label="寄付で応援する方法を見る">
+                  <span class="support-card__icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                  </span>
+                  <div class="support-card__title">寄付で支える</div>
+                  <div class="support-card__desc">単発のご支援で、講演会や情報発信の基盤を後押しする。</div>
+                  <span class="support-card__action" aria-hidden="true">支援方法を見る &rarr;</span>
+                </a>
+                <a href="/contact/" class="support-card support-card--secondary" aria-label="お問い合わせページへ進む">
+                  <span class="support-card__icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  </span>
+                  <div class="support-card__title">相談・問い合わせ</div>
+                  <div class="support-card__desc">講演、連携、活動内容についてのご相談や確認はこちらから。</div>
+                  <span class="support-card__action" aria-hidden="true">お問い合わせへ &rarr;</span>
+                </a>
+              </div>
+              <p class="contact-note">
                 お問い合わせ先：NPO法人 日本介護予防推進協会<br>
-                メール：<a href="mailto:hello@npo-nihon-kaigoyobou.com" style="color:var(--color-primary);">hello@npo-nihon-kaigoyobou.com</a>
+                メール：<a href="mailto:info@npo-nihon-kaigoyobou.com">info@npo-nihon-kaigoyobou.com</a>
               </p>
-            </div>
+            </section>
 
-            <div style="text-align:center; margin-top:48px;">
+            <div class="report-back">
               <a href="/news/" class="btn btn--outline-primary">お知らせ一覧へ戻る</a>
             </div>
           </article>
